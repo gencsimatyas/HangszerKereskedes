@@ -1,0 +1,67 @@
+body
+{
+	background-image:url(pics/1.gif);
+}
+
+.cim
+{
+	font-size:32px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#000;
+}
+
+.iras
+{
+	font-size:16px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+}
+
+.udv
+{
+	font-size:16px;
+	color:#000;
+	text-align:center;
+}
+a:hover {
+	font-size: 24px;
+	color: #900;
+	cursor: pointer;
+	filter: Light;
+	-webkit-transition: all;
+	-moz-transition: all;
+	-ms-transition: all;
+	-o-transition: all;
+	transition: all;
+}
+
+.tabla
+{
+	font-size:18px;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+}
+
+.link
+{
+	font-size: 18px;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+}
+
+.ir
+{
+	color:#FFF;
+	text-align:center;
+	font-size:28px;
+}
+
+.link2
+{
+	font-size:18px;
+	color:#000;
+	text-decoration:none;
+	text-align:center;
+}

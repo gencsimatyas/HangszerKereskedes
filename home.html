@@ -1,0 +1,96 @@
+<?php
+
+	include 'fuggv.php';
+	see();
+
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gencsi Mátyás Hangszerüzlete</title>
+<link rel="shortcut icon" href="pics/black_guitar.ico" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	
+
+	<table border="1" align="right">    
+	
+    
+    <tr><td>
+    <table border="0" align="right" bgcolor="#FFFFFF" background="pics/paper_by_francy84.jpg">
+    	<tr>
+          <td>
+				  <?php
+                  session_start();
+                  $nev = $_SESSION['username'];
+				  echo '<p class="udv">Üdvözlünk '.$nev.'!</p>';
+                  ?>
+          </td>
+          
+          
+			
+          <td align="right"><a href="home.php?menupont=kosar"><img src="pics/cart1.png" width="40" /></a></td>
+          <?php if ($_SESSION['username'] == "admin") echo ' <td align="right"><form action="home.php?menupont=admin" method="post"><input name="" type="submit" value="Adminisztrációs Felület!" /></form></td> '; ?>
+          <td align="right"><form action="home.php?menupont=beallit" method="post"><input name="" type="submit" value="Beállítások!" /></form></td>
+		  <td align="right"><form action="home.php?menupont=fold" method="post"><input name="" type="submit" value="Ugrás a Főoldalra!" /></form></td>
+          <td align="right"><form action="home.php?menupont=logout" method="post"><input name="" type="submit" value="Kijelentkezés!" /></form> </td>
+
+        </tr>
+	</table>
+    
+    </td></tr>
+    </table>
+    
+    <br/><br/><br/><br/><br/><br/>
+    
+    
+    	<table border="1" align="center"  background="pics/paper_by_francy84.jpg">
+        <tr><td>
+          <table border="0" align="center" bgcolor="#FFFFFF" background="pics/paper_by_francy84.jpg">
+            <tr><td><p class="cim">Üdvözlünk Gencsi Mátyás Hangszerüzletének Honlapján!</p></td>
+            <td> <img src="pics2/female guitar.gif"  width="80"/> </td></tr>
+          </table>
+          </td></tr>
+  		</table>
+        
+  <table bgcolor="#FFFFFF" align="center" border="1" class="tabla" background="pics/paper_by_francy84.jpg">
+  
+  		<tr>
+      		    <td width="200"><a href="home.php" class="link2">Főoldal</a></td>
+        		<td width="200"><a href="home.php?menupont=ceginfo" class="link2">Céginfó</a></td>
+                <td width="200"><a href="home.php?menupont=webaruhaz" class="link2">Webáruház</a></td>
+                <td width="200"><a href="home.php?menupont=vendegkonyv&amp;page=1" class="link2">Vendégkönyv</a></td>
+        </tr>
+  	
+  </table>
+  
+  <?php
+		 echo "<br/><br/>";
+		 if(isset($_REQUEST['menupont']))
+		 switch($_REQUEST["menupont"])
+			 {
+			  case 'ceginfo' : include "ceginfo.php";break;
+			  case 'webaruhaz' : include "webaruhaz.php";break;
+			  case 'vendegkonyv' : include 'vendegkonyv.php';break;
+			  case 'beallit' : include 'beallit.php';break;
+			  case 'fold' : include 'fold.php';break;
+			  case 'logout' : include 'logout.php';break;
+			  case 'admin' : include 'admin.php';break;
+			  case 'kosar' : include 'kosar.php';break;
+			 }
+ ?>
+  		
+        <br />
+  		<p align="center"><img src="pics/guitar223.png" /></p>
+        
+        <p class="iras" align="center">Copyright © hangszerbolt.p.ht 2013.</p>
+        <p class="iras" align="center">All rights reserved.</p>
+    
+</body>
+</html>
